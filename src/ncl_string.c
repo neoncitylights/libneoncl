@@ -41,8 +41,10 @@ char* strRepeat(const char* str, size_t times) {
 }
 
 char* strToLower(const char* str) {
-	char* lower = malloc(strlen(str));
-	for (size_t i = 0; i < strlen(str); i++) {
+	const size_t len = strlen(str);
+	char* lower = malloc(len);
+
+	for (size_t i = 0; i < len; i++) {
 		const char buffer[] = {tolower(str[i]), '\0'};
 		strcat(lower, buffer);
 	}
@@ -51,8 +53,10 @@ char* strToLower(const char* str) {
 }
 
 char* strToUpper(const char* str) {
-	char* upper = malloc(strlen(str));
-	for (size_t i = 0; i < strlen(str); i++) {
+	const size_t len = strlen(str);
+	char* upper = malloc(len);
+
+	for (size_t i = 0; i < len; i++) {
 		const char buffer[] = {toupper(str[i]), '\0'};
 		strcat(upper, buffer);
 	}
