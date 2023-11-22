@@ -42,7 +42,7 @@ char* strRepeat(const char* str, size_t times) {
 
 char* strToLower(const char* str) {
 	const size_t len = strlen(str);
-	char* lower = malloc(len);
+	char* lower = malloc(len + 1);
 
 	for (size_t i = 0; i < len; i++) {
 		const char buffer[] = {tolower(str[i]), '\0'};
@@ -54,7 +54,7 @@ char* strToLower(const char* str) {
 
 char* strToUpper(const char* str) {
 	const size_t len = strlen(str);
-	char* upper = malloc(len);
+	char* upper = malloc(len + 1);
 
 	for (size_t i = 0; i < len; i++) {
 		const char buffer[] = {toupper(str[i]), '\0'};
@@ -130,7 +130,7 @@ char* strSlice(const char* str, size_t start, size_t end) {
 
 char* strSliceFrom(const char* str, size_t start) {
 	const size_t strLen = strlen(str) - start;
-	char* slice = malloc(strLen);
+	char* slice = malloc(strLen + 1);
 
 	size_t j = 0;
 	for (size_t i = 0; i < strLen; i++) {
