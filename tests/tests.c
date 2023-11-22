@@ -3,25 +3,29 @@
 
 #include "../src/ncl_string.h"
 
+void assertStrEquals(const char *s1, const char *s2) {
+	assert(strcmp(s1, s2) == 0);
+}
+
 void testCharRepeat() {
-	assert(strcmp(charRepeat('z', 0), ""));
-	assert(strcmp(charRepeat('a', 5), "aaaaa"));
+	assertStrEquals(charRepeat('z', 0), "");
+	assertStrEquals(charRepeat('a', 5), "aaaaa");
 }
 
 void testStrRepeat() {
-	assert(strcmp(strRepeat("Foo", 0), ""));
-	assert(strcmp(strRepeat("Foo", 2), "FooFoo"));
-	assert(strcmp(strRepeat("FooBar", 3), "FooBarFooBarFooBar"));
+	assertStrEquals(strRepeat("Foo", 0), "");
+	assertStrEquals(strRepeat("Foo", 2), "FooFoo");
+	assertStrEquals(strRepeat("FooBar", 3), "FooBarFooBarFooBar");
 }
 
 void testStrToLower() {
-	assert(strcmp(strToLower(""), ""));
-	assert(strcmp(strToLower("AHH"), "ahh"));
-	assert(strcmp(strToLower("moo"), "moo"));
+	assertStrEquals(strToLower(""), "");
+	assertStrEquals(strToLower("AHH"), "ahh");
+	assertStrEquals(strToLower("moo"), "moo");
 }
 
 void testStrToUpper() {
-	assert(strcmp(strToUpper(""), ""));
-	assert(strcmp(strToUpper("AHH"), "AHH"));
-	assert(strcmp(strToUpper("meow"), "MEOW"));
+	assertStrEquals(strToUpper(""), "");
+	assertStrEquals(strToUpper("AHH"), "AHH");
+	assertStrEquals(strToUpper("meow"), "MEOW");
 }
