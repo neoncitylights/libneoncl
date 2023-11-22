@@ -17,6 +17,7 @@ char* strJoin(const char* strings[], size_t size, char* separator) {
 			strcat(joined, separator);
 		}
 	}
+	joined[total_size] = '\0';
 
 	return joined;
 }
@@ -32,10 +33,13 @@ char* charRepeat(const char c, size_t times) {
 }
 
 char* strRepeat(const char* str, size_t times) {
-	char* repeat = malloc(times * strlen(str) + sizeof('\0'));
+	const size_t len = times * strlen(str) + 1;
+	char* repeat = malloc(len);
+
 	for (size_t i = 0; i < times; i++) {
 		strcat(repeat, str);
 	}
+	repeat[len] = '\0';
 
 	return repeat;
 }
@@ -48,6 +52,7 @@ char* strToLower(const char* str) {
 		const char buffer[] = {tolower(str[i]), '\0'};
 		strcat(lower, buffer);
 	}
+	lower[len] = '\0';
 
 	return lower;
 }
@@ -60,6 +65,7 @@ char* strToUpper(const char* str) {
 		const char buffer[] = {toupper(str[i]), '\0'};
 		strcat(upper, buffer);
 	}
+	upper[len] = '\0';
 
 	return upper;
 }
@@ -124,6 +130,7 @@ char* strSlice(const char* str, size_t start, size_t end) {
 	for (size_t i = 0; i < len; i++) {
 		slice[i] = str[i];
 	}
+	slice[len] = '\0';
 
 	return slice;
 }
@@ -137,6 +144,7 @@ char* strSliceFrom(const char* str, size_t start) {
 		slice[j] = str[i];
 		j++;
 	}
+	slice[strLen] = '\0';
 
 	return slice;
 }
