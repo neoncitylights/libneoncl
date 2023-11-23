@@ -71,7 +71,7 @@ char* strToUpper(const char* str) {
 }
 
 int strIndexOf(const char* str, const char c) {
-	for (size_t i = 0; i < strlen(str); i++) {
+	for (int i = 0; i < strlen(str); i++) {
 		if (str[i] == c) {
 			return i;
 		}
@@ -81,7 +81,7 @@ int strIndexOf(const char* str, const char c) {
 }
 
 int strLastIndexOf(const char* str, const char c) {
-	for (size_t i = strlen(str); i > 0; i--) {
+	for (int i = strlen(str); i > 0; i--) {
 		if (str[i] == c) {
 			return i;
 		}
