@@ -1,16 +1,14 @@
 #include "strings.h"
-#include <string.h>
 #include <ctype.h>
+#include <string.h>
 
-char* strJoin(const char* strings[], size_t size, char* separator) {
-	int total_size = 0;
+char* strJoin(const char* strings[], size_t size, const char* separator) {
+	size_t total_size = strlen(separator) * (size - 1);
 	for (size_t i = 0; i < size; i++) {
 		total_size += strlen(strings[i]);
 	}
 
-	total_size += strlen(separator) * (size - 1);
 	char* joined = malloc(total_size);
-
 	for (size_t i = 0; i < size; i++) {
 		strcat(joined, strings[i]);
 		if (i < size - 1) {
@@ -70,24 +68,24 @@ char* strToUpper(const char* str) {
 	return upper;
 }
 
-int strIndexOf(const char* str, const char c) {
-	for (int i = 0; i < strlen(str); i++) {
+size_t strIndexOf(const char* str, const char c) {
+	for (size_t i = 0; i < strlen(str); i++) {
 		if (str[i] == c) {
 			return i;
 		}
 	}
 
-	return -1;
+	return NULL;
 }
 
-int strLastIndexOf(const char* str, const char c) {
-	for (int i = strlen(str); i > 0; i--) {
+size_t strLastIndexOf(const char* str, const char c) {
+	for (size_t i = strlen(str); i > 0; i--) {
 		if (str[i] == c) {
 			return i;
 		}
 	}
 
-	return -1;
+	return NULL;
 }
 
 bool strStartsWith(const char* str, const char* prefix) {
@@ -102,6 +100,7 @@ bool strStartsWith(const char* str, const char* prefix) {
 		prefix++;
 		str++;
 	}
+
 	return true;
 }
 
