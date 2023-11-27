@@ -1,31 +1,27 @@
 #include <assert.h>
 #include <string.h>
-
+#include <gtest/gtest.h>
 #include "../src/ncl_string.h"
 
-void assertStrEquals(const char *s1, const char *s2) {
-	assert(strcmp(s1, s2) == 0);
+TEST(LIBNEONCL_STRINGS, MethodCharRepeat) {
+	EXPECT_STREQ(charRepeat('z', 0), "");
+	EXPECT_STREQ(charRepeat('a', 5), "aaaaa");
 }
 
-void testCharRepeat() {
-	assertStrEquals(charRepeat('z', 0), "");
-	assertStrEquals(charRepeat('a', 5), "aaaaa");
+TEST(LIBNEONCL_STRINGS, MethodStrRpeat) {
+	EXPECT_STREQ(strRepeat("Foo", 0), "");
+	EXPECT_STREQ(strRepeat("Foo", 2), "FooFoo");
+	EXPECT_STREQ(strRepeat("FooBar", 3), "FooBarFooBarFooBar");
 }
 
-void testStrRepeat() {
-	assertStrEquals(strRepeat("Foo", 0), "");
-	assertStrEquals(strRepeat("Foo", 2), "FooFoo");
-	assertStrEquals(strRepeat("FooBar", 3), "FooBarFooBarFooBar");
+TEST(LIBNEONCL_STRINGS, MethodStrToLower) {
+	EXPECT_STREQ(strToLower(""), "");
+	EXPECT_STREQ(strToLower("AHH"), "ahh");
+	EXPECT_STREQ(strToLower("moo"), "moo");
 }
 
-void testStrToLower() {
-	assertStrEquals(strToLower(""), "");
-	assertStrEquals(strToLower("AHH"), "ahh");
-	assertStrEquals(strToLower("moo"), "moo");
-}
-
-void testStrToUpper() {
-	assertStrEquals(strToUpper(""), "");
-	assertStrEquals(strToUpper("AHH"), "AHH");
-	assertStrEquals(strToUpper("meow"), "MEOW");
+TEST(LIBNEONCL_STRINGS, MethodStrToUpper) {
+	EXPECT_STREQ(strToUpper(""), "");
+	EXPECT_STREQ(strToUpper("AHH"), "AHH");
+	EXPECT_STREQ(strToUpper("meow"), "MEOW");
 }

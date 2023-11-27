@@ -1,7 +1,10 @@
-### JetBrains ###
-.idea
+debug
+release
 cmake-build-debug
 cmake-build-release
+
+### JetBrains ###
+.idea
 
 ### C ###
 # Prerequisites
