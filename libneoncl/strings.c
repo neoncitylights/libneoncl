@@ -1,4 +1,4 @@
-#include "ncl_string.h"
+#include "strings.h"
 #include <string.h>
 #include <ctype.h>
 

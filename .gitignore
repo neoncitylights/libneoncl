@@ -4,6 +4,9 @@ cmake-build-debug
 cmake-build-release
 
 ### C ###
+# clangd
+.cache
+
 # Prerequisites
 *.d
 

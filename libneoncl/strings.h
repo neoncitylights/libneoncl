@@ -1,5 +1,5 @@
-#ifndef NCL_STRINGS_H_
-#define NCL_STRINGS_H_
+#ifndef LIBNEONCL_STRINGS_H
+#define LIBNEONCL_STRINGS_H
 #include <stdbool.h>
 #include <stdlib.h>
 
@@ -15,4 +15,4 @@ bool strEndsWith(const char *str, const char *suffix);
 char *strSlice(const char *str, size_t start, size_t end);
 char *strSliceFrom(const char *str, size_t start);
 
-#endif // NCL_STRINGS_H_
+#endif // LIBNEONCL_STRINGS_H
