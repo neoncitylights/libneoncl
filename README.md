@@ -9,7 +9,7 @@ My personal library with a high-level, general-purpose API. At the moment, it fo
 
 libneoncl aims to support C11 at a minimum, and uses the latest stable version of CMake for the build system. It is tested against the latest stable version of Clang, GCC, and MSVC. At the time of writing, this includes Clang 17, GCC 13, and MSVC 19.
 
-This library automatically compiles against the following in CI:
+This library automatically compiles against the following targets in CI:
 
 - [ ] `x86_64-apple-darwin`: 64-bit x86 architecture for Apple (Darwin) systems
 - [x] `x86_64-pc-windows-msvc`: 64-bit x86 architecture for Windows with MSVC toolchain
