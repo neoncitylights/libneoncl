@@ -61,8 +61,7 @@ char* strToLower(const char* str) {
 	}
 
 	for (size_t i = 0; i < len; i++) {
-		const char buffer[] = {tolower(str[i]), '\0'};
-		strcat(lower, buffer);
+		lower[i] = (char)tolower(str[i]);
 	}
 	lower[len] = '\0';
 
@@ -77,8 +76,7 @@ char* strToUpper(const char* str) {
 	}
 
 	for (size_t i = 0; i < len; i++) {
-		const char buffer[] = {toupper(str[i]), '\0'};
-		strcat(upper, buffer);
+		upper[i] = (char)toupper(str[i]);
 	}
 	upper[len] = '\0';
 
