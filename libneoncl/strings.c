@@ -9,6 +9,10 @@ char* strJoin(const char* strings[], size_t size, const char* separator) {
 	}
 
 	char* joined = malloc(total_size);
+	if (joined == NULL) {
+		return joined;
+	}
+
 	for (size_t i = 0; i < size; i++) {
 		strcat(joined, strings[i]);
 		if (i < size - 1) {
@@ -22,6 +26,10 @@ char* strJoin(const char* strings[], size_t size, const char* separator) {
 
 char* charRepeat(const char c, size_t times) {
 	char* repeat = malloc(times + 1);
+	if (repeat == NULL) {
+		return repeat;
+	}
+
 	for (size_t i = 0; i < times; i++) {
 		repeat[i] = c;
 	}
@@ -33,6 +41,9 @@ char* charRepeat(const char c, size_t times) {
 char* strRepeat(const char* str, size_t times) {
 	const size_t len = times * strlen(str) + 1;
 	char* repeat = malloc(len);
+	if (repeat == NULL) {
+		return repeat;
+	}
 
 	for (size_t i = 0; i < times; i++) {
 		strcat(repeat, str);
@@ -45,6 +56,9 @@ char* strRepeat(const char* str, size_t times) {
 char* strToLower(const char* str) {
 	const size_t len = strlen(str);
 	char* lower = malloc(len + 1);
+	if (lower == NULL) {
+		return lower;
+	}
 
 	for (size_t i = 0; i < len; i++) {
 		const char buffer[] = {tolower(str[i]), '\0'};
@@ -58,6 +72,9 @@ char* strToLower(const char* str) {
 char* strToUpper(const char* str) {
 	const size_t len = strlen(str);
 	char* upper = malloc(len + 1);
+	if (upper == NULL) {
+		return upper;
+	}
 
 	for (size_t i = 0; i < len; i++) {
 		const char buffer[] = {toupper(str[i]), '\0'};
@@ -125,6 +142,9 @@ bool strEndsWith(const char *str, const char* suffix) {
 char* strSlice(const char* str, size_t start, size_t end) {
 	const size_t len = end - start;
 	char* slice = malloc(len + 1);
+	if (slice == NULL) {
+		return slice;
+	}
 
 	for (size_t i = 0; i < len; i++) {
 		slice[i] = str[i];
@@ -137,6 +157,9 @@ char* strSlice(const char* str, size_t start, size_t end) {
 char* strSliceFrom(const char* str, size_t start) {
 	const size_t strLen = strlen(str) - start;
 	char* slice = malloc(strLen + 1);
+	if (slice == NULL) {
+		return slice;
+	}
 
 	size_t j = 0;
 	for (size_t i = 0; i < strLen; i++) {
