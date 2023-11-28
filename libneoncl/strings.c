@@ -155,18 +155,5 @@ char* strSlice(const char* str, size_t start, size_t end) {
 }
 
 char* strSliceFrom(const char* str, size_t start) {
-	const size_t strLen = strlen(str) - start;
-	char* slice = malloc(strLen + 1);
-	if (slice == NULL) {
-		return slice;
-	}
-
-	size_t j = 0;
-	for (size_t i = 0; i < strLen; i++) {
-		slice[j] = str[i];
-		j++;
-	}
-	slice[strLen] = '\0';
-
-	return slice;
+	return strSlice(str, start, strlen(str));
 }
