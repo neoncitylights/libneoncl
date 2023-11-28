@@ -7,14 +7,14 @@ My personal library with a high-level, general-purpose API. At the moment, it fo
 
 ## Platform support
 
-At the moment, libneoncl aims to support C11 at a minimum. This library automatically compiles against the following in CI:
+libneoncl aims to support C11 at a minimum, and uses the latest stable version of CMake for the build system. It is tested against the latest stable version of Clang, GCC, and MSVC. At the time of writing, this includes Clang 17, GCC 13, and MSVC 19.
+
+This library automatically compiles against the following in CI:
 
 - [ ] `x86_64-apple-darwin`: 64-bit x86 architecture for Apple (Darwin) systems
 - [x] `x86_64-pc-windows-msvc`: 64-bit x86 architecture for Windows with MSVC toolchain
 - [x] `x86_64-pc-linux-gnu`: 64-bit x86 architecture for Linux with GNU toolchain
 - [x] `aarch64-linux-gnu`: 64-bit ARM architecture for Linux with GNU toolchain
-
-It is tested against the latest stable CMake version, and the latest stable version of Clang, GCC, and MSVC. At the time of writing, this includes Clang 17, GCC 13, and MSVC 19.
 
 ## License
 
