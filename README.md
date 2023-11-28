@@ -3,14 +3,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/neoncitylights/libneoncl/.github%2Fworkflows%2Fcmake-multi-platform.yml?style=flat-square&logo=github)](https://github.com/neoncitylights/libneoncl/actions/workflows/cmake-multi-platform.yml)
 
-My personal library with a high-level, general-purpose API. At the moment, it focuses on working with UTF-8 strings and general text encoding/decoding, with plans to expand in different areas as necessary.
+My personal library with a high-level, general-purpose API. At the moment, it focuses on working with UTF-8 strings and general text encoding/decoding, with plans to expand in different areas as necessary. The library is considered unstable and its API may change at any time.
 
 ## Platform support
 
-At the moment, libneoncl aims to support C11 at a minimum. This library compiles against the following:
+At the moment, libneoncl aims to support C11 at a minimum. This library automatically compiles against the following in CI:
 
 - [ ] `x86_64-apple-darwin`: 64-bit x86 architecture for Apple (Darwin) systems
-- [x] `x86_64-pc-windows-msvc`: 64-bit 8x86 architecture for Windows with MSVC toolchain
+- [x] `x86_64-pc-windows-msvc`: 64-bit x86 architecture for Windows with MSVC toolchain
 - [x] `x86_64-pc-linux-gnu`: 64-bit x86 architecture for Linux with GNU toolchain
 - [x] `aarch64-linux-gnu`: 64-bit ARM architecture for Linux with GNU toolchain
 
